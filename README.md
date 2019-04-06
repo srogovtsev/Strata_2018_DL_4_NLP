@@ -36,18 +36,13 @@ Download the pre-trained Twitter GloVe word vectors from [here](https://nlp.stan
 4. Run the Docker image by entering
 
     ```
-    docker run -it -p 8888:8888 -v <path to repo>:/root strata_nlp_<image_type>
+    docker run -it -p 8888:8888 -v <path to repo>:/tf/notebooks strata_nlp_<image_type>
     ```
 
     where `<image_type>` is either `gpu` or `cpu`, depending on the image you built in the last step.
+    Per [TF docker image description](https://hub.docker.com/r/tensorflow/tensorflow/) this will start Jupyter as well.
 
-5. After building, starting, and attaching to the appropriate Docker container, run the provided Jupyter notebooks by entering
-
-    ```
-    jupyter notebook --ip 0.0.0.0 --allow-root
-    ```
-
-    and navigate to the specified URL `http://0.0.0.0:8888/?token=<JUPYTER NOTEBOOK ACCESS TOKEN>` in your browser.
+5. Navigate to the specified URL `http://localhost:8888/?token=<JUPYTER NOTEBOOK ACCESS TOKEN>` in your browser.
     
 6. Choose `0X_Notebook_Title.ipynb` to open the applicable Notebook.
 	

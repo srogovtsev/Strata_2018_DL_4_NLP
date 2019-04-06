@@ -1,10 +1,10 @@
-
 # Set the base image to Ubuntu
-FROM tensorflow/tensorflow:latest-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
 
 # File Author / Maintainer
 MAINTAINER Garrett Hoffman
 
+# Install git and TF dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends libboost-all-dev && \
     apt-get install -y software-properties-common \
@@ -36,7 +36,3 @@ COPY requirements.txt /root/
 
 RUN pip install -r /root/requirements.txt
 RUN rm /root/requirements.txt
-
-WORKDIR /root
-
-CMD ["/bin/bash"]
